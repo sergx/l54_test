@@ -1,14 +1,15 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>{{config('app.name','LSAPP?')}}</title>
-    </head>
-    <body>
-    <h1>Welcome to Lapavel</h1>
-    <p>This is the Laravel application from "Laravel from scrach" YouTube</p>
-    </body>
-</html>
+@section('content')
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container text-center">
+        <h1>{{$title}}</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p>
+          <a class="btn btn-primary btn-lg" href="/login">Login</a>
+          <a class="btn btn-success btn-lg" href="/register">Register</a>
+        </p>
+      </div>
+    </div>
+@endsection
