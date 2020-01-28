@@ -9,6 +9,6 @@
     </head>
     <body>
     <h1>Welcome to Lapavel</h1>
-    <p>This is the about page</p>
+    <p>This is the services page</p>
     </body>
 </html>
