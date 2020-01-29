@@ -3,6 +3,8 @@
   <div class="jumbotron">
     <a href="{{route('posts.index')}}" class="btn btn-default">Go back</a>
     <h1>{{$post->title}}</h1>
+    <img style="max-width:100%" src="/storage/cover_images/{{$post->cover_image}}" alt="">
+    <hr>
     <div>
       {!!$post->body!!}
       <!-- синтаксис !! нужен для того, чтобы шаблонизатор пропарсил HTML теги -->
