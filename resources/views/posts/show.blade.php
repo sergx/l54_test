@@ -8,7 +8,7 @@
       <!-- синтаксис !! нужен для того, чтобы шаблонизатор пропарсил HTML теги -->
     </div>
     <hr>
-    <p><small>{{$post->created_at}}</small></p>
+    <p><small>{{$post->created_at}} by {{$post->user->name}}</small></p>
     <hr>
     <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
 

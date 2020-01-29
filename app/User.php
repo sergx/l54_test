@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // Определяем, что User имеет много post
+    // Благодаря этому можно использовать конструкции:
+    // {{$post->user->name}} в posts/index.blade.php и posts/show.blade.php
+    // return view('dashboard')->with('posts', _$user->posts_); в DashboardController
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
 }
