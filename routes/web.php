@@ -28,3 +28,7 @@ Route::get('/users/{id}/{name}', function ($id, $name) {
     return "This is user id $id, e.g. $name";
 });
 
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');

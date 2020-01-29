@@ -1,11 +1,11 @@
 <?php
 // Создано командой в терминале
-// php artisan make:model Post -m
+// php artisan make:migration add_user_id_to_posts
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration
+class AddUserIdToPosts extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,9 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->mediumText('body');
-            $table->timestamps();
+        // Добавим поле user_id к таблице users
+        Schema::table('posts', function($table){
+            $table->integer('user_id');
         });
     }
 
@@ -29,6 +27,9 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        // Убираем поле user_id из таблицы users
+        Schema::table('posts', function($table){
+            $table->dropColumn('user_id');
+        });
     }
 }
